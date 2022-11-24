@@ -25,8 +25,8 @@ const Header = () => {
                     className="inline-flex items-center"
                 >
                     <img src={logo} className="w-10 h-10" alt="" />
-                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Watch-Bazar
+                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
+                        Watch-<span className='text-orange-500'>Bazar</span>
                     </span>
                 </NavLink>
                 {/* flex lagle ekhane deya jai */}
@@ -113,7 +113,7 @@ const Header = () => {
                                         >
                                             <img src={logo} className="w-10 h-10" alt="" />
                                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                Watch-Bazar
+                                                Watch-<span className='text-orange-500'>Bazar</span>
                                             </span>
                                         </NavLink>
                                     </div>
