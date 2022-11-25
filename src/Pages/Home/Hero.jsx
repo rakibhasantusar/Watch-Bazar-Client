@@ -16,7 +16,7 @@ const Hero = () => {
                                     Get Started
                                 </div>
                                 <h2 className="text-3xl text-white md:text-4xl font-extrabold mb-4">
-                                    Grow your business <span className="text-orange-500">now</span>!
+                                    Buy & Sell your watch <span className="text-orange-500">Now</span>!
                                 </h2>
                                 <h3 className="text-lg md:text-xl md:leading-relaxed font-medium text-gray-50">
                                     Inspiring results from day one without the pain. Get your own custom dashboard and start building amazing services.
@@ -26,7 +26,7 @@ const Hero = () => {
 
                             {/* Action */}
                             <div>
-                                <Link to="#" className="inline-flex justify-center items-center space-x-2  font-bold focus:outline-none px-6 py-4 leading-6 bg-orange-500 text-white hover:text-white hover:bg-orange-500 focus:ring-opacity-50 active:bg-orange-500">
+                                <Link to="/signup" className="inline-flex justify-center items-center space-x-2  font-bold focus:outline-none px-6 py-4 leading-6 bg-orange-500 text-white hover:text-white hover:bg-orange-500 focus:ring-opacity-50 active:bg-orange-500">
                                     <svg stroke="currentColor" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="text-gray-900 hi-outline hi-plus-circle inline-block w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                     <span className='text-gray-900'>Create your Account</span>
                                 </Link>
@@ -34,8 +34,8 @@ const Hero = () => {
                             {/* END Action */}
                         </div>
                     </div>
-                    <div className="flex items-center  md:justify-center lg:justify-end">
-                        <img src={img} alt="" className="mask mask-parallelogram-3 mx-auto" />
+                    <div className="flex items-center lg:justify-end ">
+                        <img src={img} alt="Wrist Watch" className="mask mask-parallelogram-3 mx-auto " />
                     </div>
                 </div>
             </div>

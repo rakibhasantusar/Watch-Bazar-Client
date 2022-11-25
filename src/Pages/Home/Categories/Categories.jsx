@@ -1,8 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import CategoriesCard from './CategoriesCard';
-import watch1 from "../../../asset/luxury.png";
-import watch2 from "../../../asset/smart.png";
-import watch3 from "../../../asset/aviator.png";
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Loading from '../../Shared/Loder/Loading';
 import axios from "axios";
@@ -24,7 +21,6 @@ const Categories = () => {
     if (loading) {
         return <Loading />
     }
-    console.log(cardData)
     return (
         <div className='mb-20'>
             <h2 className='text-5xl text-center font-semibold mt-20 mb-5'>Watch Category</h2>
