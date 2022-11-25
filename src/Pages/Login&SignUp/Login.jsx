@@ -20,6 +20,8 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(res => {
                 const user = res.user
+
+                saveUser(user.displayName, user.email)
                 console.log(user);
                 if (user.uid) {
                     navigate(from, { replace: true })
@@ -32,6 +34,25 @@ const Login = () => {
                 setLoading(false)
             })
     }
+
+    //social login make buyer
+
+    const saveUser = (name, email) => {
+        const user = { name, email, role: "buyer" };
+        fetch('http://localhost:5000/users', {
+            method: 'put',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+
+
 
     const from = location.state?.from?.pathname || '/';
 
