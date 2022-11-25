@@ -4,7 +4,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useSeller from '../../Hooks/useSeller';
 import Loading from '../../Pages/Shared/Loder/Loading';
 
-const SellerAdminRoute = () => {
+const SellerAdminRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const [isSeller, isSellerLoading] = useSeller(user?.email);
     const location = useLocation();

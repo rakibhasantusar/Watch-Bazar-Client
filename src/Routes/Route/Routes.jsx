@@ -6,6 +6,9 @@ import MyOrder from "../../Pages/DashboardArea/BuyerAdmin/MyOrder";
 import AllBuyer from "../../Pages/DashboardArea/MyAdmin/AllBuyer";
 import AllSellers from "../../Pages/DashboardArea/MyAdmin/AllSellers";
 import ReportedItem from "../../Pages/DashboardArea/MyAdmin/ReportedItem";
+import AddAproduct from "../../Pages/DashboardArea/SellerAdmin/AddAproduct";
+import MyBuyers from "../../Pages/DashboardArea/SellerAdmin/MyBuyers";
+import MyProducts from "../../Pages/DashboardArea/SellerAdmin/MyProducts";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import CategoryDetail from "../../Pages/Home/Categories/CategoryDetail";
 import Home from "../../Pages/Home/Home";
@@ -13,6 +16,7 @@ import Login from "../../Pages/Login&SignUp/Login";
 import SignUp from "../../Pages/Login&SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import BuyerAdminroute from "../AdminRoute/BuyerAdminroute";
+import SellerAdminRoute from "../AdminRoute/SellerAdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -68,6 +72,18 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/myorders",
                 element: <BuyerAdminroute><MyOrder></MyOrder></BuyerAdminroute>
+            },
+            {
+                path: "/dashboard/myproducts",
+                element: <SellerAdminRoute><MyProducts></MyProducts></SellerAdminRoute>
+            },
+            {
+                path: "/dashboard/addaproduct",
+                element: <SellerAdminRoute><AddAproduct></AddAproduct></SellerAdminRoute>
+            },
+            {
+                path: "/dashboard/mybuyers",
+                element: <SellerAdminRoute><MyBuyers></MyBuyers></SellerAdminRoute>
             }
         ]
     }

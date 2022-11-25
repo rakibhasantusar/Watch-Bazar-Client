@@ -3,11 +3,13 @@ import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import useAdmin from '../Hooks/useAdmin';
 import useBuyer from '../Hooks/useBuyer';
+import useSeller from '../Hooks/useSeller';
 import Header from '../Pages/Shared/Header/Header';
 const Dashboard = () => {
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email)
     const [isBuyer] = useBuyer(user?.email)
+    const [isSeller] = useSeller(user?.email)
     return (
         <div>
             <Header></Header>
@@ -28,6 +30,12 @@ const Dashboard = () => {
                         },
                         {isBuyer && <>
                             <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                        </>
+                        },
+                        {isSeller && <>
+                            <li><Link to="/dashboard/myproducts">My Products</Link></li>
+                            <li><Link to="/dashboard/addaproduct">Add A Product</Link></li>
+                            <li><Link to="/dashboard/mybuyers">My Buyers</Link></li>
                         </>
                         }
                     </ul>
