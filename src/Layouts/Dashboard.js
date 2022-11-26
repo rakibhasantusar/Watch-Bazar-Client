@@ -22,17 +22,19 @@ const Dashboard = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay "></label>
                     <ul className="menu p-4 w-80 text-base-content border border-orange-500">
                         {isAdmin && <>
-                            <h2 className='text-xl mb-4'>Buyer & Seller</h2>
+                            <h2 className='text-xl mb-4'>Admin Dasboord</h2>
                             <li><Link to="/dashboard/allbuyers">All Buyers</Link></li>
-                            <li><Link to="/dashboard/allsellers">Admin Sellers</Link></li>
+                            <li><Link to="/dashboard/allsellers">All Sellers</Link></li>
                             <li><Link to="/dashboard/reporteditem">Reported Item</Link></li>
                         </>
-                        },
+                        }
                         {isBuyer && <>
+                            <h2 className='text-xl mb-4'>Buyer Dasboord</h2>
                             <li><Link to="/dashboard/myorders">My Orders</Link></li>
                         </>
-                        },
+                        }
                         {isSeller && <>
+                            <h2 className='text-xl mb-4'>Seller Dasboord</h2>
                             <li><Link to="/dashboard/myproducts">My Products</Link></li>
                             <li><Link to="/dashboard/addaproduct">Add A Product</Link></li>
                             <li><Link to="/dashboard/mybuyers">My Buyers</Link></li>
