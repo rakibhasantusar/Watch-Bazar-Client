@@ -3,6 +3,7 @@ import React from 'react';
 import Loading from '../Shared/Loder/Loading';
 import Categories from './Categories/Categories';
 import CategoriesCardAdvertise from './Categories/CategoriesCardAdvertise';
+import CategoryModal from './Categories/CategoryModal';
 import Hero from './Hero';
 
 const Home = () => {

@@ -1,12 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Loading from '../../Shared/Loder/Loading';
+import CategoryModal from './CategoryModal';
 import CategoryProductCard from './CategoryProductCard';
 
 const CategoryDetail = () => {
+    const [product1, selectProduct1] = useState({})
     const detail = useLoaderData()
-
     const { name } = detail;
 
     const url = `http://localhost:5000/wathcCategories/${name}`
@@ -45,9 +46,13 @@ const CategoryDetail = () => {
                                 key={product._id}
                                 product={product}
                                 isLoading={isLoading}
+                                selectProduct1={selectProduct1}
                             ></CategoryProductCard>)
                         }
                     </div>
+                    <CategoryModal
+                        product1={product1}
+                    ></CategoryModal>
                 </div>
             </div>
         </div>

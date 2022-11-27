@@ -44,7 +44,6 @@ const CategoriesCardAdvertise = ({ product, isLoading }) => {
                     </div>
                 </div >
 
-
             }
         </>
     );

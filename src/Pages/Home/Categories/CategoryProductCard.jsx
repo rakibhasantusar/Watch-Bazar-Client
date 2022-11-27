@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { MdVerified } from "react-icons/md";
 import Loading from '../../Shared/Loder/Loading';
 
 
-const CategoryProductCard = ({ product, isLoading }) => {
+
+const CategoryProductCard = ({ product, isLoading, selectProduct1 }) => {
     const { photo, _id, verified, productName, description, productLocation, price, resalePrice, yearsOfuse, postedTime, sellerName } = product;
     console.log(product)
 
@@ -33,9 +33,13 @@ const CategoryProductCard = ({ product, isLoading }) => {
                 </div>
                 <div className='flex w-full justify-end'>
                     <p>Years Of Use: {yearsOfuse} </p>
-                    <Link to={``}>
-                        <button className="btn-sm font-semibold text-gray-900 bg-orange-500 rounded-none">BOOK NOW</button>
-                    </Link>
+                    <div>
+                        <label
+                            onClick={() => selectProduct1(product)}
+                            htmlFor="booking-modal"
+                            className="btn-sm font-bold py-1 cursor-pointer text-gray-900 bg-orange-500 rounded-none"
+                        >BOOK NOW</label>
+                    </div>
                 </div>
             </div>
         </div>
