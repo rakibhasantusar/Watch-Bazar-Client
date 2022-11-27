@@ -3,7 +3,7 @@ import React from 'react';
 const ReportedItem = () => {
     return (
         <div>
-            <h2>reported item</h2>
+            <h3 className="text-3xl mx-8 mb-5">Reported Item</h3>
         </div>
     );
 };

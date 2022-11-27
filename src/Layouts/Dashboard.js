@@ -20,7 +20,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay "></label>
-                    <ul className="menu p-4 w-80 text-base-content border border-orange-500">
+                    <ul data-theme="autumn" className="menu p-4 w-80 text-gray-900 font-semibold border border-gray-900">
                         {isAdmin && <>
                             <h2 className='text-xl mb-4'>Admin Dasboord</h2>
                             <li><Link to="/dashboard/allbuyers">All Buyers</Link></li>

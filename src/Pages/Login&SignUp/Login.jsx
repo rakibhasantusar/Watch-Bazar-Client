@@ -38,7 +38,7 @@ const Login = () => {
     //social login make buyer
 
     const saveUser = (name, email) => {
-        const user = { name, email, role: "buyer" };
+        const user = { name, email, role: "buyer", verify: 'false' };
         fetch('http://localhost:5000/users', {
             method: 'put',
             headers: {

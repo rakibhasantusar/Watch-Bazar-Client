@@ -21,18 +21,18 @@ const SignUp = () => {
         e.preventDefault();
         const form = e.target
         const name = form.name.value;
-        const photourl = form.photourl.value;
         const email = form.email.value;
         const password = form.password.value;
         const selection = form.selection.value;
-        createUser(email, password, selection)
+
+        createUser(email, password)
             .then(res => {
                 const user = res.user
                 console.log(user)
                 toast.success('your registration with login done')
                 setError('')
                 form.reset()
-                handleUpdateUserProfile(name, photourl)
+                handleUpdateUserProfile(name)
                 saveUser(name, email, selection)
             })
             .catch(err => {
@@ -41,10 +41,9 @@ const SignUp = () => {
             })
     }
 
-    const handleUpdateUserProfile = (name, photourl) => {
+    const handleUpdateUserProfile = (name) => {
         const profile = {
             displayName: name,
-            photoURL: photourl,
         }
         upDateUserProfile(profile)
             .then(() => { })
@@ -52,7 +51,7 @@ const SignUp = () => {
     }
 
     const saveUser = (name, email, selection) => {
-        const user = { name, email, role: selection };
+        const user = { name, email, role: selection, verify: 'false' };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -87,10 +86,6 @@ const SignUp = () => {
                                 <div className="space-y-2">
                                     <label className="block text-sm text-left">Your full Name</label>
                                     <input type="text" name="name" placeholder="your full name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-gray-300" required />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="block text-sm text-left">Photo Url</label>
-                                    <input type="text" name="photourl" placeholder="your profile photo url" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-gray-300" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="block text-sm text-left">Email address</label>
