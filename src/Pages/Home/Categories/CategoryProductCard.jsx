@@ -5,7 +5,7 @@ import Loading from '../../Shared/Loder/Loading';
 
 
 const CategoryProductCard = ({ product, isLoading, selectProduct1 }) => {
-    const { photo, _id, verified, productName, description, productLocation, price, resalePrice, yearsOfuse, postedTime, sellerName } = product;
+    const { photo, verified, productName, description, productLocation, price, resalePrice, yearsOfuse, postedTime, sellerName } = product;
     console.log(product)
 
     if (isLoading) {

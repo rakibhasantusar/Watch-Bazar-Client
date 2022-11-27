@@ -50,9 +50,13 @@ const CategoryDetail = () => {
                             ></CategoryProductCard>)
                         }
                     </div>
-                    <CategoryModal
-                        product1={product1}
-                    ></CategoryModal>
+
+                    {product1 &&
+                        <CategoryModal
+                            product1={product1}
+                            selectProduct1={selectProduct1}
+                        ></CategoryModal>
+                    }
                 </div>
             </div>
         </div>

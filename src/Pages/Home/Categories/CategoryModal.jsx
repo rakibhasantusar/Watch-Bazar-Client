@@ -1,13 +1,45 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
-const CategoryModal = ({ product1 }) => {
+const CategoryModal = ({ product1, selectProduct1 }) => {
     const { user } = useContext(AuthContext)
-    const { resalePrice, productName } = product1
-    const handlerSubmit = () => {
+    const { resalePrice, productName, photo } = product1
+
+    const handlerSubmit = e => {
+        e.preventDefault();
+        const form = e.target;
+        const phone = form.phone.value;
+        const meeting = form.meeting.value;
+
+        const booking = {
+            photo,
+            productName,
+            resalePrice,
+            meeting,
+            phone
+        }
+
+        fetch('http://localhost:5000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    selectProduct1(null)
+                    toast.success('Booking confirmed');
+                }
+                else {
+                    toast.error(data.message);
+                }
+            })
 
     }
-    console.log(product1)
 
     return (
         <>

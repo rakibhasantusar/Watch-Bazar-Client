@@ -15,12 +15,12 @@ const Dashboard = () => {
             <Header></Header>
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content">
+                <div className="drawer-content " data-theme="cupcake">
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay "></label>
-                    <ul data-theme="autumn" className="menu p-4 w-80 text-gray-900 font-semibold border border-gray-900">
+                    <ul data-theme="garden" className="menu p-4 w-80 text-gray-900 font-semibold border border-r-gray-900">
                         {isAdmin && <>
                             <h2 className='text-xl mb-4'>Admin Dasboord</h2>
                             <li><Link to="/dashboard/allbuyers">All Buyers</Link></li>
