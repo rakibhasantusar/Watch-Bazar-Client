@@ -1,12 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import Loading from '../Shared/Loder/Loading';
 import Categories from './Categories/Categories';
 import CategoriesCardAdvertise from './Categories/CategoriesCardAdvertise';
+import CategoryModal from './Categories/CategoryModal';
 import Hero from './Hero';
 import HomeTestimonial from './HomeTestimonial';
 
 const Home = () => {
+    const [product1, selectProduct1] = useState({})
 
     const url = `http://localhost:5000/wathcCategories`
 
@@ -22,7 +24,6 @@ const Home = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    console.log(products)
     return (
         <div>
             <Hero></Hero>
@@ -37,9 +38,16 @@ const Home = () => {
                                     key={product._id}
                                     product={product}
                                     isLoading={isLoading}
+                                    selectProduct1={selectProduct1}
                                 ></CategoriesCardAdvertise>)
                             }
                         </div>
+                        {product1 &&
+                            <CategoryModal
+                                product1={product1}
+                                selectProduct1={selectProduct1}
+                            ></CategoryModal>
+                        }
                     </div>
                 }
             </div>

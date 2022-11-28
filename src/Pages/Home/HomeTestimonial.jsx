@@ -5,7 +5,7 @@ import photo3 from "../../asset/testimonial/image3.jpg";
 
 const HomeTestimonial = () => {
     return (
-        <section className="my-36 dark:bg-gray-800 dark:text-gray-100 container  mx-auto">
+        <section className="my-40 dark:bg-gray-800 dark:text-gray-100 container  mx-auto">
             <div className="container flex flex-col items-center mx-auto mb-8 md:p-10 md:px-12">
                 <h1 className="p-4 text-5xl font-semibold leading-none text-center">What our customers are saying about us</h1>
             </div>

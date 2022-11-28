@@ -1,12 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { MdVerified } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Loading from '../../Shared/Loder/Loading';
 
 
-const CategoriesCardAdvertise = ({ product, isLoading }) => {
+const CategoriesCardAdvertise = ({ product, isLoading, selectProduct1 }) => {
+    const navigate = useNavigate()
+    const { user } = useContext(AuthContext)
     const { photo, _id, advertised, verified, productName, description, productLocation, price, resalePrice, yearsOfuse, postedTime, sellerName } = product;
-    console.log(product)
+
 
     if (isLoading) {
         return <Loading></Loading>
@@ -37,9 +40,21 @@ const CategoriesCardAdvertise = ({ product, isLoading }) => {
                         </div>
                         <div className='flex w-full justify-end'>
                             <p>Years Of Use: {yearsOfuse} </p>
-                            <Link to={``}>
-                                <button className="btn-sm font-semibold text-gray-900 bg-orange-500 rounded-none">BOOK NOW</button>
-                            </Link>
+                            <div>
+                                {user?.uid ?
+                                    <label label
+                                        onClick={() => selectProduct1(product)}
+                                        htmlFor="booking-modal"
+                                        className="btn-sm font-bold py-1 cursor-pointer text-gray-900 bg-orange-500 rounded-none"
+                                    >BOOK NOW</label>
+                                    :
+                                    <label label
+                                        onClick={() => navigate('/login')}
+                                        htmlFor="booking-modal"
+                                        className="btn-sm font-bold py-1 cursor-pointer text-gray-900 bg-orange-500 rounded-none"
+                                    >BOOK NOW</label>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div >
