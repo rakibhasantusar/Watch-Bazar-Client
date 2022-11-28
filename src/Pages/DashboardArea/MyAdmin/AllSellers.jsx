@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loder/Loading';
 
 const AllSellers = () => {
+    const navigate = useNavigate()
     const { data: users = [], refetch, isLoading } = useQuery({
         queryKey: [`users`],
         queryFn: async () => {
@@ -32,6 +34,12 @@ const AllSellers = () => {
 
     if (isLoading) {
         return <Loading></Loading>
+    }
+    const handlerPaid = id => {
+        if (id) {
+            toast.success("successfully paid");
+            navigate('/home')
+        }
     }
 
 
@@ -64,18 +72,11 @@ const AllSellers = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    {/* {
-                                        user.price && !user.paid && <Link
-                                            to={`/dashboard/payment/${user._id}`}
-                                        >
-                                            <button
-                                                className='btn-ghost btn-sm'
-                                            >Pay</button>
-                                        </Link>
-                                    } */}
-                                    {/* {
-                                        user.price && user.paid && <span className='text-green-500'>Paid</span>
-                                    } */}
+                                    <td>
+                                        <button className='btn-sm bg-slate-900 text-orange-500 font-bold rounded' onClick={() => handlerPaid(user._id)}>
+                                            verify
+                                        </button>
+                                    </td>
                                 </td>
                             </tr>)
                         }
