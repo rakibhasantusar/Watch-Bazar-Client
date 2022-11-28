@@ -23,7 +23,7 @@ const Categories = () => {
     }
     return (
         <div className='mb-20'>
-            <h2 className='text-5xl text-center font-semibold mt-20 mb-5'>Watch Category</h2>
+            <h2 className='text-5xl text-center font-semibold mt-20 mb-5'>Resale Watch Category</h2>
             <hr className='w-[30%] mx-auto mb-14 border-2 border-dashed border-slate-900 ' />
 
 
