@@ -39,7 +39,7 @@ const Login = () => {
 
     const saveUser = (name, email) => {
         const user = { name, email, role: "buyer", verify: 'false' };
-        fetch('http://localhost:5000/users', {
+        fetch('https://watch-bazar-server.vercel.app/users', {
             method: 'put',
             headers: {
                 'content-type': 'application/json'

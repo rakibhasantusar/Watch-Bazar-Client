@@ -54,7 +54,7 @@ const AddAproduct = () => {
 
         }
 
-        fetch('http://localhost:5000/wathcCategories', {
+        fetch('https://watch-bazar-server.vercel.app/wathcCategories', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

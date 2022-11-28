@@ -7,7 +7,7 @@ const AllSellers = () => {
     const { data: users = [], refetch, isLoading } = useQuery({
         queryKey: [`users`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users/seller`);
+            const res = await fetch(`https://watch-bazar-server.vercel.app/users/seller`);
             const data = await res.json();
             console.log(data)
             return data;
@@ -18,7 +18,7 @@ const AllSellers = () => {
     const handlerDelete = id => {
         const proceed = window.confirm('Want to delete this review?')
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://watch-bazar-server.vercel.app/users/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

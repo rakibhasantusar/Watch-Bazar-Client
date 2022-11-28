@@ -10,7 +10,7 @@ const Categories = () => {
     const { loading, setLoading } = useContext(AuthContext)
     const [cardData, setCardData] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/categories`)
+        axios.get(`https://watch-bazar-server.vercel.app/categories`)
             .then(res => {
                 setCardData(res.data)
                 setLoading(false)

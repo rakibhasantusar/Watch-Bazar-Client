@@ -9,7 +9,7 @@ const MyProducts = () => {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const url = `http://localhost:5000/wathcCategories`
+    const url = `https://watch-bazar-server.vercel.app/wathcCategories`
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ["name"],
         queryFn: async () => {
@@ -22,7 +22,7 @@ const MyProducts = () => {
     const handlerDelete = id => {
         const proceed = window.confirm('Want to delete this review?')
         if (proceed) {
-            fetch(`http://localhost:5000/wathcCategories/${id}`, {
+            fetch(`https://watch-bazar-server.vercel.app/wathcCategories/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

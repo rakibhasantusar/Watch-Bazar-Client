@@ -44,7 +44,7 @@ const router = createBrowserRouter([
             {
                 path: "/categorydetail/:id",
                 element: <PrivateRoute><CategoryDetail></CategoryDetail></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://watch-bazar-server.vercel.app/categories/${params.id}`)
             },
             {
                 path: "/blog",

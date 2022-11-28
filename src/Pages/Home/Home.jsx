@@ -10,7 +10,7 @@ import HomeTestimonial from './HomeTestimonial';
 const Home = () => {
     const [product1, selectProduct1] = useState({})
 
-    const url = `http://localhost:5000/wathcCategories`
+    const url = `https://watch-bazar-server.vercel.app/wathcCategories`
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ["name"],

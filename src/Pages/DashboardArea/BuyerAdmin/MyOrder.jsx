@@ -9,7 +9,7 @@ const MyOrder = () => {
     const { data: bookings = [], refetch, isLoading } = useQuery({
         queryKey: [`booking`],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/booking`);
+            const res = await fetch(`https://watch-bazar-server.vercel.app/booking`);
             const data = await res.json();
             console.log(data)
             return data;

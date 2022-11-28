@@ -20,7 +20,7 @@ const CategoryModal = ({ product1, selectProduct1 }) => {
             phone
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://watch-bazar-server.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

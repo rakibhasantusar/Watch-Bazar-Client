@@ -10,7 +10,7 @@ const CategoryDetail = () => {
     const detail = useLoaderData()
     const { name } = detail;
 
-    const url = `http://localhost:5000/wathcCategories/${name}`
+    const url = `https://watch-bazar-server.vercel.app/wathcCategories/${name}`
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ["name"],

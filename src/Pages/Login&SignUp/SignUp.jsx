@@ -52,7 +52,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, selection) => {
         const user = { name, email, role: selection, verify: 'false' };
-        fetch('http://localhost:5000/users', {
+        fetch('https://watch-bazar-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
