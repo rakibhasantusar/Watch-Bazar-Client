@@ -1,9 +1,10 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const MyBuyers = () => {
     return (
         <div>
-            <h2>My Buyers</h2>
         </div>
     );
 };

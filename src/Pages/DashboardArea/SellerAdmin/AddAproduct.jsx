@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const AddAproduct = () => {
     // const image_host_key = process.env.REACT_APP_imgbb_key;
     const { user, loading } = useContext(AuthContext)
-
+    const navigate = useNavigate()
     if (loading) {
         return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-black"></div>
     }
@@ -62,12 +63,15 @@ const AddAproduct = () => {
         })
             .then(res => res.json())
             .then(data => {
+                if (data.acknowledged) {
+                    navigate('/dashboard/myproducts')
+                    toast.success('your Product added')
+                }
 
-                toast.success('your registration with login done')
                 console.log(data)
             })
 
-        form.reset()
+        // form.reset()
         // console.log(data)
     }
 

@@ -35,8 +35,8 @@ const Dashboard = () => {
                         }
                         {isSeller && <>
                             <h2 className='text-xl mb-4'>Seller Dasboord</h2>
-                            <li><Link to="/dashboard/myproducts">My Products</Link></li>
                             <li><Link to="/dashboard/addaproduct">Add A Product</Link></li>
+                            <li><Link to="/dashboard/myproducts">My Products</Link></li>
                             <li><Link to="/dashboard/mybuyers">My Buyers</Link></li>
                         </>
                         }
