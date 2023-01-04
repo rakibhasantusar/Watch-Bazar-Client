@@ -37,8 +37,6 @@ const CategoryDetail = () => {
 
             <div>
                 <div className='container mx-auto mt-2 mb-20 '>
-                    {/* <h2 className='text-6xl text-center font-semibold mb-5'>All Sarvice Area </h2>
-                    <hr className='w-[50%] mx-auto mb-20 border-2 border-dashed ' /> */}
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5'>
                         {/* <div className='flex flex-wrap gap-8 px-5' > */}
                         {
